@@ -33,7 +33,8 @@ Para saber mais sobre como configurar seu ambiente, visite o Guia de download do
 - MediatR
 - IU Swagger com suporte JWT
 - Identidade
-- Arquitetura:
+
+## Arquitetura:
 - Arquitetura completa com questões de separação de responsabilidades, SÓLIDO e Código Limpo
 - Design Orientado por Domínio (Camadas e Padrão de Modelo de Domínio)
 - Eventos de Domínio
@@ -41,5 +42,5 @@ Para saber mais sobre como configurar seu ambiente, visite o Guia de download do
 - Validações de Domínio
 - CQRS (Consistência Imediata)
 - Sourcing de eventos
-- Unidade de Trabalho
+- Unit of Work
 - Repositório
