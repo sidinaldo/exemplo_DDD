@@ -1,6 +1,6 @@
 # Virtual PDV
 
-## O que é a Virtul Rent a Car?
+## O que é a Virtul PDV?
 =====================
 O Projeto Virtual PDV é um projeto de código aberto escrito em .NET Core
 
