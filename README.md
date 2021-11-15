@@ -1,7 +1,9 @@
 # Virtual PDV
 
 ## O que é a Virtul PDV?
+
 =====================
+
 O Projeto Virtual PDV é um projeto de código aberto escrito em .NET Core
 
 O objetivo deste projeto é implementar as tecnologias mais utilizadas e mostrar a melhor forma de desenvolver ótimas aplicações com .NET
