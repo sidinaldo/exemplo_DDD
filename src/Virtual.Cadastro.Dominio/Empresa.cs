@@ -1,8 +1,9 @@
 ﻿using System;
+using Virtual.Core.ObjetosDominio;
 
 namespace Virtual.Cadastro.Dominio
 {
-    public class Empresa
+    public class Empresa : EntidadeBase
     {
         public Guid ClienteId { get; set; }
         public string Cnpj { get; set; }

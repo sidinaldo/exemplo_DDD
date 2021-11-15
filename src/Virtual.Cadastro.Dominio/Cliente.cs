@@ -4,32 +4,55 @@ using Virtual.Core.ObjetosDominio;
 namespace Virtual.Cadastro.Dominio
 {
     public class Cliente : EntidadeBase
-    {
-        public Guid ClienteId { get; set; }
-        public string Cpf { get; set; }
-        public string Nome { get; set; }
+    {      
         public bool Ativo { get; set; }
+        public Guid PessoaId { get; set; }
 
+        public Pessoa Pessoa { get; set; }
 
-        public void AtualizarCliente(string nome, string cpf)
+        protected Cliente() { }
+
+        public Cliente(Guid pessoaId)
         {
-            Nome = nome;
-            Cpf = cpf;
+            Id = Guid.NewGuid();
+            PessoaId = Pessoa.Id;
+            Ativo = true;           
+
         }
+
+        internal void AssociarPessoa(Pessoa pessoa)
+        {
+            Pessoa = pessoa;
+        }
+
+        public void InativarCliente()
+        {
+            Ativo = false;
+        }
+
+        public void AtivarCliente()
+        {
+            Ativo = true;
+        }
+
+        public bool ClienteAtivo => Ativo;
 
         public override string ToString()
         {
-            return $"{Cpf} - {Nome}";
+            return $"{Pessoa.Cpf} - {Pessoa.Nome}";
+        }
+
+        public class FabricaCliente
+        {
+            public static Cliente Criar(Guid pessoaId)
+            {
+                return new Cliente(pessoaId);
+            }
         }
 
         public void Validar()
         {
-            Validacoes.ValidarSeVazio(Nome, "O campo Nome do cliente não pode estar vazio.");
-            Validacoes.ValidarTamanho(Nome, 10, 100, "O campo Nome do cliente não pode ser menor que 10 caractéres e maior que 100.");
-            Validacoes.ValidarSeVazio(Cpf, "O campo Nome do cliente não pode estar vazio.");
-            Validacoes.ValidarSeVerdadeiro(true, "O CPF é inválido.");
+            Validacoes.ValidarSeNulo(PessoaId, "O campo Nome do cliente não pode estar vazio.");            
         }
-
-
     }
 }

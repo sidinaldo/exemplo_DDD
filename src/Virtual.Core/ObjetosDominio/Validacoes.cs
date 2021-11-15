@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Virtual.Core.ObjetosDominio
 {
@@ -59,6 +60,14 @@ namespace Virtual.Core.ObjetosDominio
         public static void ValidarSeNulo(object object1, string mensagem)
         {
             if (object1 == null)
+            {
+                throw new ExcecaoDominio(mensagem);
+            }
+        }
+
+        public static void ValidarSeNulo(Guid object1, string mensagem)
+        {
+            if (object1.ToString() == "00000000-0000-0000-0000-000000000000")
             {
                 throw new ExcecaoDominio(mensagem);
             }
