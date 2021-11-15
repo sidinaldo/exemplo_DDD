@@ -9,7 +9,7 @@ O Projeto Virtual PDV é um projeto de código aberto escrito em .NET Core
 O objetivo deste projeto é implementar as tecnologias mais utilizadas e mostrar a melhor forma de desenvolver ótimas aplicações com .NET
 
 Dê uma estrela! ⭐
-Se você gostou do projeto ou se a Rent Car ajudou você, dê uma estrela;)
+Se você gostou do projeto ou se a Vitual PDV ajudou você, dê uma estrela;)
 
 ## Como usar:
 Você precisará do Visual Studio 2019 e do .NET Core SDK mais recentes.
