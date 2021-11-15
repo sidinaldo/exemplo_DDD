@@ -16,7 +16,7 @@ Você precisará do Visual Studio 2019 e do .NET Core SDK mais recentes.
 
 Verifique se você instalou a mesma versão de tempo de execução (SDK) descrita em global.json
 O SDK e as ferramentas mais recentes podem ser baixados em https://dot.net/core.
-Também é possível executar o projeto ou se Rent Car no Visual Studio Code (Windows, Linux ou MacOS).
+Também é possível executar o projeto Virtual PDV no Visual Studio Code (Windows, Linux ou MacOS).
 
 Para saber mais sobre como configurar seu ambiente, visite o Guia de download do Microsoft .NET
 
