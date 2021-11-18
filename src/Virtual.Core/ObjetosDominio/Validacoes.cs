@@ -67,7 +67,7 @@ namespace Virtual.Core.ObjetosDominio
 
         public static void ValidarSeNulo(Guid object1, string mensagem)
         {
-            if (object1.ToString() == "00000000-0000-0000-0000-000000000000")
+            if (object1 == Guid.Empty)
             {
                 throw new ExcecaoDominio(mensagem);
             }
