@@ -13,7 +13,9 @@ namespace Virtual.Cadastro.Dominio
 
         public Pessoa Pessoa { get; private set; }
 
-        protected Cliente() { }
+        protected Cliente() 
+        {
+        }
 
         public Cliente(string cpf, string nome, DateTime dataNascimento, bool ativo = true)
         {

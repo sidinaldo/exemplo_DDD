@@ -10,10 +10,10 @@ namespace Virtual.Cadastro.Dominio
         public string Nome { get;  set; }
         public DateTime DataNascimento { get;  set; }
 
+        protected Pessoa() {}
 
         public Pessoa(string cpf, string nome, DateTime dataNascimento)
         {
-            Id = Guid.NewGuid();
             Cpf = cpf;
             Nome = nome;
             DataNascimento = dataNascimento;
