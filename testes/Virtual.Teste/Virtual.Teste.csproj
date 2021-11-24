@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Virtual.Cadastro.Dominio\Virtual.Cadastro.Dominio.csproj" />
+    <ProjectReference Include="..\..\src\Virtual.Cadastro.Dominio\Virtual.Cadastro.Dominio.csproj" />
   </ItemGroup>
 
 </Project>
