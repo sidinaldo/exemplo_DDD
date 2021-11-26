@@ -36,7 +36,8 @@ namespace Virtual.Teste.Cadastros.Cenarios
             var empresas = new Faker<Empresa>()
                 .CustomInstantiator(f => new Empresa(
                         f.Company.Cnpj(),
-                        f.Name.FullName(),
+                        f.Company.CompanyName(),
+                        f.Person.Phone,
                         ativo
                     ));
 
@@ -47,8 +48,9 @@ namespace Virtual.Teste.Cadastros.Cenarios
         {
             var empresa = new Faker<Empresa>()
                  .CustomInstantiator(f => new Empresa(
-                         "23456787645",
+                         "89910255003423",
                          f.Name.FullName(),
+                         f.Person.Phone,
                          true
                      ));
 
@@ -59,8 +61,9 @@ namespace Virtual.Teste.Cadastros.Cenarios
         {
             var empresa = new Faker<Empresa>()
                 .CustomInstantiator(f => new Empresa(
-                        f.Person.Cpf(),
-                        "Joile LTDA",
+                        f.Company.Cnpj(),
+                        "Joi LTDA",
+                        f.Person.Phone,
                         true
                     ));
 
