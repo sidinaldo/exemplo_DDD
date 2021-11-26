@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Virtual.Cadastro.Aplicacao.ViewModels;
-using Virtual.Cadastro.Dominio;
+using Virtual.Cadastro.Dominio.Entidades;
+using Virtual.Cadastro.Dominio.Interfaces;
 using Virtual.Cadastro.Servicos.Aplicacao;
-using Virtual.Core.Data;
 
 namespace Virtual.Cadastro.Aplicacao.Servicos
 {
@@ -18,11 +17,6 @@ namespace Virtual.Cadastro.Aplicacao.Servicos
             _mapper = mapper;
             _clienteRepositorio = clienteRepositorio;
 
-        }
-
-        public Task<IEnumerable<ClienteViewModel>> ObterClientesTodos(bool ativo)
-        {
-            throw new System.NotImplementedException();
         }
 
         public async Task AdicionarCliente(ClienteViewModel clienteViewModel)
@@ -39,15 +33,11 @@ namespace Virtual.Cadastro.Aplicacao.Servicos
             _clienteRepositorio.AtualizarCliente(cliente);
 
             await _clienteRepositorio.UnitOfWork.Commit();
-        }       
+        }
 
-        
-
-        public interface IClienteRepositorio : IRepositorio<Cliente>
+        public void Dispose()
         {
-            Task<IEnumerable<ClienteViewModel>> ObterClientesTodos(bool ativo);
-            void AdicionarCliente(Cliente cliente);
-            void AtualizarCliente(Cliente cliente);
+            _clienteRepositorio?.Dispose();
         }
     }
 }

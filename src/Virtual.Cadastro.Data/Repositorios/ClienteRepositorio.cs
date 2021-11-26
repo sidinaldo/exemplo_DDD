@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Virtual.Cadastro.Aplicacao.ViewModels;
-using Virtual.Cadastro.Dominio;
+﻿using Virtual.Cadastro.Dominio.Entidades;
+using Virtual.Cadastro.Dominio.Interfaces;
 using Virtual.Core.Data;
-using static Virtual.Cadastro.Aplicacao.Servicos.ClienteAppServico;
 
 namespace Virtual.Cadastro.Data.Repositorios
 {
@@ -20,22 +17,17 @@ namespace Virtual.Cadastro.Data.Repositorios
 
         public void AdicionarCliente(Cliente cliente)
         {
-            throw new System.NotImplementedException();
+            _context.Clientes.Add(cliente);
         }
 
         public void AtualizarCliente(Cliente cliente)
         {
-            throw new System.NotImplementedException();
+            _context.Clientes.Update(cliente);
         }
 
         public void Dispose()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<IEnumerable<ClienteViewModel>> ObterClientesTodos(bool ativo)
-        {
-            throw new System.NotImplementedException();
+            _context?.Dispose();
         }
     }
 }

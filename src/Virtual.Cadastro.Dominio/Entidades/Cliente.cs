@@ -1,11 +1,10 @@
 ﻿using System;
 using Virtual.Core.ObjetosDominio;
-using Virtual.Core.Utils;
 
-namespace Virtual.Cadastro.Dominio
+namespace Virtual.Cadastro.Dominio.Entidades
 {
     public class Cliente : EntidadeBase, IAgregadorRaiz
-    {       
+    {
 
         public bool Ativo { get; private set; }
         public Guid PessoaId { get; private set; }
@@ -13,13 +12,13 @@ namespace Virtual.Cadastro.Dominio
 
         public Pessoa Pessoa { get; private set; }
 
-        protected Cliente() 
+        protected Cliente()
         {
         }
 
         public Cliente(string cpf, string nome, DateTime dataNascimento, bool ativo = true)
         {
-            Id = Guid.NewGuid(); 
+            Id = Guid.NewGuid();
             DataCadastro = DateTime.Now;
             Ativo = ativo;
             Pessoa = new Pessoa(cpf, nome, dataNascimento);
@@ -38,7 +37,7 @@ namespace Virtual.Cadastro.Dominio
 
         public void Ativar() => Ativo = true;
 
-        public bool EhEspecial() =>  DataCadastro < DateTime.Now.AddYears(-2) && Ativo;
+        public bool EhEspecial() => DataCadastro < DateTime.Now.AddYears(-2) && Ativo;
 
         public bool ClienteAtivo() => Ativo;
 

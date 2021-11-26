@@ -1,7 +1,7 @@
 ﻿using System;
 using Virtual.Core.ObjetosDominio;
 
-namespace Virtual.Cadastro.Dominio
+namespace Virtual.Cadastro.Dominio.Entidades
 {
     public class Empresa : EntidadeBase
     {
@@ -10,12 +10,14 @@ namespace Virtual.Cadastro.Dominio
         public string Email { get; set; }
         public string Telefone { get; set; }
         public bool Ativo { get; set; }
+        public DateTime DataCadastro { get; set; }
 
         public Empresa(string cnpj, string nome, bool ativo = true)
         {
             Cnpj = cnpj;
             Nome = nome;
             Ativo = ativo;
+            DataCadastro = DateTime.Now;
 
             Validar();
         }

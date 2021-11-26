@@ -2,7 +2,7 @@
 using Virtual.Core.ObjetosDominio;
 using Virtual.Core.Utils;
 
-namespace Virtual.Cadastro.Dominio
+namespace Virtual.Cadastro.Dominio.Entidades
 {
     public class   Pessoa: EntidadeBase
     {
