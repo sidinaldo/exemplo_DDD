@@ -21,16 +21,16 @@ namespace Virtual.Cadastro.Dominio.Entidades
             Id = Guid.NewGuid();
             DataCadastro = DateTime.Now;
             Ativo = ativo;
-            Pessoa = new Pessoa(cpf, nome, dataNascimento);
 
-            //Validar();
-            AssociarPessoa();
+            AssociarPessoa(cpf, nome, dataNascimento);
         }
 
 
-        internal void AssociarPessoa()
+        internal void AssociarPessoa(string cpf, string nome, DateTime dataNascimento)
         {
+            Pessoa = new Pessoa(cpf, nome, dataNascimento);
             PessoaId = Pessoa.Id;
+            Pessoa.Validar();
         }
 
         public void Inativar() => Ativo = false;
@@ -46,15 +46,15 @@ namespace Virtual.Cadastro.Dominio.Entidades
         public class FabricaCliente
         {
             public static Cliente Criar(string cpf, string nome, DateTime dataNascimento, bool ativo)
-            {
+            {                 
                 return new Cliente(cpf, nome, dataNascimento, ativo);
             }
         }
 
-        //public void Validar()
-        //{
-        //    Validacoes.ValidarSeNulo(PessoaId, "O campo Nome do cliente não pode estar vazio.");           
-        //}
+        public void Validar()
+        {
+            Validacoes.ValidarSeNulo(PessoaId, "A pessoa é inválida");
+        }
 
         public override bool EhValido()
         {

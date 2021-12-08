@@ -22,6 +22,9 @@ namespace Virtual.Cadastro.Aplicacao.Servicos
         public async Task AdicionarCliente(ClienteViewModel clienteViewModel)
         {
             var cliente = _mapper.Map<Cliente>(clienteViewModel);
+
+            if (!cliente.EhValido()) { return; };
+
             _clienteRepositorio.AdicionarCliente(cliente);
 
             await _clienteRepositorio.UnitOfWork.Commit();
@@ -30,6 +33,9 @@ namespace Virtual.Cadastro.Aplicacao.Servicos
         public async Task AtualizarCliente(ClienteViewModel clienteViewModel)
         {
             var cliente = _mapper.Map<Cliente>(clienteViewModel);
+
+            if (!cliente.EhValido()) { return; };
+
             _clienteRepositorio.AtualizarCliente(cliente);
 
             await _clienteRepositorio.UnitOfWork.Commit();
