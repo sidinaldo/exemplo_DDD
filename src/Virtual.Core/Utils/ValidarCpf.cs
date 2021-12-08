@@ -95,7 +95,7 @@ namespace Virtual.Core.Utils
             public override string ToString() => _value;
         }
 
-        public static bool ValidarCPF(Cpf sourceCPF) =>
+        public static bool Validar(Cpf sourceCPF) =>
             sourceCPF.EhValido;
 
     }

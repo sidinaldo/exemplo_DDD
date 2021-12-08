@@ -26,7 +26,7 @@ namespace Virtual.Cadastro.Dominio.Entidades
             Validacoes.ValidarSeVazio(Nome, "O campo Nome do cliente não pode estar vazio.");
             Validacoes.ValidarTamanho(Nome, 10, 100, "O campo Nome do cliente não pode ser menor que 10 caractéres e maior que 100.");
             Validacoes.ValidarSeVazio(Cpf, "O campo CPF do cliente não pode estar vazio.");
-            Validacoes.ValidarSeFalso(ValidarCpf.ValidarCPF(Cpf), "O CPF é inválido.");
+            Validacoes.ValidarSeFalso(ValidarCpf.Validar(Cpf), "O CPF é inválido.");
         }
     }
 }
